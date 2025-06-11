@@ -49,7 +49,7 @@ function YouTubeCard({ video }: YouTubeCardProps) {
           href={video.notesLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-outline font-bold"
+          className="btn btn-soft btn-primary font-bold transition-colors duration-200"
           style={{ 
             backgroundColor: '#3447AA',
             borderColor: '#3447AA',
