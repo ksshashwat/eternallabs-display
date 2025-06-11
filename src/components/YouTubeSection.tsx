@@ -27,27 +27,29 @@ interface YouTubeCardProps {
 
 function YouTubeCard({ video }: YouTubeCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div className="space-y-3">
       {/* Video Embed */}
-      <div className="aspect-video">
-        <iframe
-          src={video.videoUrl}
-          title="YouTube video"
-          className="w-full h-full"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          loading="lazy"
-        />
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div className="aspect-video">
+          <iframe
+            src={video.videoUrl}
+            title="YouTube video"
+            className="w-full h-full"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
       </div>
       
-      {/* Notes Link */}
-      <div className="p-4">
+      {/* Notes Button - Separate */}
+      <div className="flex justify-center">
         <a
           href={video.notesLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center space-x-2 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-200"
+          className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-lg border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-200 text-sm font-medium"
         >
           <span>📓</span>
           <span>Read my notes</span>

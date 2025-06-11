@@ -24,7 +24,7 @@ const mockProducts: Product[] = [
   {
     logoUrl: '',
     description: 'Analytics dashboard for content creators',
-    // No productUrl - this will be disabled
+    productUrl: '' // Empty string instead of undefined to ensure hover works
   },
   {
     logoUrl: '',
@@ -41,7 +41,7 @@ function ProductBadge({ product }: ProductBadgeProps) {
   const [showTooltip, setShowTooltip] = useState(false)
 
   const handleClick = () => {
-    if (product.productUrl) {
+    if (product.productUrl && product.productUrl.length > 0) {
       window.open(product.productUrl, '_blank', 'noopener,noreferrer')
     }
   }
@@ -49,9 +49,9 @@ function ProductBadge({ product }: ProductBadgeProps) {
   return (
     <div
       className={`relative group ${
-        product.productUrl 
+        product.productUrl && product.productUrl.length > 0
           ? 'cursor-pointer transform hover:scale-105 transition-transform duration-200' 
-          : 'cursor-default opacity-75'
+          : 'cursor-default opacity-75 transform hover:scale-105 transition-transform duration-200'
       }`}
       onClick={handleClick}
       onMouseEnter={() => setShowTooltip(true)}
@@ -59,10 +59,10 @@ function ProductBadge({ product }: ProductBadgeProps) {
     >
       {/* Product Badge */}
       <div className={`
-        w-24 h-24 bg-white rounded-lg shadow-sm border border-gray-200 
+        w-24 h-24 bg-white rounded-lg shadow-lg border border-gray-200 
         flex items-center justify-center p-4
-        ${product.productUrl ? 'hover:shadow-md' : ''}
-        transition-shadow duration-200
+        ${product.productUrl ? 'hover:shadow-2xl hover:shadow-blue-500/20' : 'hover:shadow-xl'}
+        transition-all duration-200
       `}>
         {product.logoUrl ? (
           <Image
@@ -84,7 +84,7 @@ function ProductBadge({ product }: ProductBadgeProps) {
       {/* Tooltip */}
       {showTooltip && (
         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10">
-          <div className="bg-gray-900 text-white text-xs rounded py-2 px-3 whitespace-nowrap max-w-48">
+          <div className="bg-gray-900 text-white text-xs rounded py-2 px-3 max-w-48 whitespace-normal text-center">
             {product.description}
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
           </div>

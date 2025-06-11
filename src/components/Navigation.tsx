@@ -29,7 +29,7 @@ export default function Navigation() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                className="text-sm font-bold text-[#3447AA] hover:text-blue-800 transition-colors duration-200"
               >
                 {link.label}
               </a>
