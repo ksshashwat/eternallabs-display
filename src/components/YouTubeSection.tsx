@@ -43,16 +43,26 @@ function YouTubeCard({ video }: YouTubeCardProps) {
         </div>
       </div>
       
-      {/* Notes Button - Separate */}
+      {/* Notes Button - daisyUI soft button */}
       <div className="flex justify-center">
         <a
           href={video.notesLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-lg border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-200 text-sm font-medium"
+          className="btn btn-outline font-bold"
+          style={{ 
+            backgroundColor: '#3447AA',
+            borderColor: '#3447AA',
+            color: 'white'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = '#F0E7E0';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = 'white';
+          }}
         >
-          <span>📓</span>
-          <span>Read my notes</span>
+          Read my notes
         </a>
       </div>
     </div>

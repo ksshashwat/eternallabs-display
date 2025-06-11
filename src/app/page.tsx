@@ -11,7 +11,10 @@ export default function Home() {
       
       <div className="flex">
         {/* Left Sidebar */}
-        <aside className="w-64 min-h-screen bg-white shadow-sm p-6 sticky top-0">
+        <aside 
+          className="w-64 min-h-screen shadow-sm p-6 sticky top-0"
+          style={{ backgroundColor: '#F0E7E0' }}
+        >
           <ProfileCard />
         </aside>
         

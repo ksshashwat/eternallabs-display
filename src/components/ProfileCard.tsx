@@ -37,7 +37,7 @@ export default function ProfileCard() {
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
             <span className="text-2xl text-white font-medium">
-              {mockProfileData.socialLinks[0]?.label.charAt(0) || 'P'}
+              L
             </span>
           </div>
         )}
@@ -45,7 +45,15 @@ export default function ProfileCard() {
       
       {/* Social Links */}
       <div className="w-full space-y-3">
-        <h3 className="text-sm font-medium text-gray-900 text-center">Connect</h3>
+        <h3 
+          className="text-sm font-bold text-center"
+          style={{ 
+            fontFamily: 'SF Pro Display, -apple-system, system-ui, sans-serif',
+            color: '#3447AA'
+          }}
+        >
+          Connect
+        </h3>
         <ul className="space-y-2">
           {mockProfileData.socialLinks.map((link, index) => (
             <li key={index}>
@@ -53,7 +61,11 @@ export default function ProfileCard() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200 hover:underline"
+                className="block text-sm font-bold hover:underline transition-colors duration-200"
+                style={{ 
+                  fontFamily: 'SF Pro Display, -apple-system, system-ui, sans-serif',
+                  color: '#3447AA'
+                }}
               >
                 {link.label}
               </a>
